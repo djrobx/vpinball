@@ -53,15 +53,17 @@ enum EnumAssignKeys
 class FrameQueueLimiter
 {
 public:
-    void Init(int numFrames)
+   void Init(int numFrames)
     {
+   
+      // if not, fallback to cheating the driver
         m_buffers.resize(numFrames, NULL);
         m_curIdx = 0;
     }
 
-    ~FrameQueueLimiter()
+   void Shutdown()
     {
-        for (unsigned i = 0; i < m_buffers.size(); ++i)
+      for (size_t i = 0; i < m_buffers.size(); ++i)
         {
             if (m_buffers[i])
                 m_buffers[i]->release();
@@ -158,6 +160,8 @@ public:
 #endif
 	void InitKeys();
 	void InitRegValues();
+
+   void Shutdown();
 
 	virtual IEditable *GetIEditable() { return (IEditable*)this; }
 
