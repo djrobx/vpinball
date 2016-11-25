@@ -22,6 +22,8 @@
 #define DISPID_POSITION_Y               8
 #define DISPID_Decal_SizingType         9
 #define DISPID_AXISSCALE_XY             9
+#define VP_VERSION_MAJOR                9
+#define VP_VERSION_MINOR                9
 #define DISPID_Surface_FaceColor        10
 #define DISPID_Light_BlinkInterval      10
 #define DISPID_AXISSCALE_XZ             10
@@ -616,6 +618,19 @@
 #define IDC_GLOBAL_3DSTEREO             427
 #define IDC_3D_STEREO_MS                428
 #define IDC_3D_STEREO_ZPD               429
+#define IDC_ENABLE_NUDGE_FILTER         430
+#define DISPID_PluFrames                431
+#define DISPID_Width                    432
+#define DISPID_ZAdjust                  433
+#define DISPID_RodDiam                  434
+#define DISPID_RingDiam                 435
+#define DISPID_RingThickness            436
+#define DISPID_SpringDiam               437
+#define DISPID_TipShape                 438
+#define DISPID_SpringGauge              439
+#define DISPID_SpringLoops              440
+#define DISPID_RingGap                  441
+#define DISPID_SpringEndLoops           442
 #define IDC_JOYLFLIPCOMBO               501
 #define IDC_JOYRFLIPCOMBO               502
 #define IDC_JOYPLUNGERCOMBO             503
@@ -720,6 +735,7 @@
 #define IDC_SHADOW_Y                    1703
 #define IDC_BALL_TRAIL                  1704
 #define IDC_TRAIL_EDIT                  1705
+#define IDC_TABLE_FILENAME		1711
 #define IDM_NEW                         32768
 #define IDM_OPEN                        32769
 #define IDM_CLOSE                       32770
@@ -810,7 +826,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        601
 #define _APS_NEXT_COMMAND_VALUE         32895
-#define _APS_NEXT_CONTROL_VALUE         426
+#define _APS_NEXT_CONTROL_VALUE         443
 #define _APS_NEXT_SYMED_VALUE           188
 #endif
 #endif

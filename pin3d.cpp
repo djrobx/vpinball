@@ -20,13 +20,12 @@ Pin3D::Pin3D()
 
 Pin3D::~Pin3D()
 {
+    m_pd3dDevice->SetZBuffer(NULL);
+
 	SAFE_RELEASE(m_pdds3DBackBuffer);
 	SAFE_RELEASE(m_pdds3DZBuffer);
-
 	SAFE_RELEASE(m_pddsZBuffer);
-
 	SAFE_RELEASE(m_pddsStatic);
-
 	SAFE_RELEASE(m_pddsStaticZ);
 
     for (std::map<int,MemTexture*>::iterator it = m_xvShadowMap.begin(); it != m_xvShadowMap.end(); ++it)
@@ -807,11 +806,11 @@ void PinProjection::Rotate(const GPINFLOAT x, const GPINFLOAT y, const GPINFLOAT
 {
 	Matrix3D matRotateX, matRotateY, matRotateZ;
 
-	matRotateX.RotateXMatrix(x);
+	matRotateX.RotateXMatrix((float)x);
 	m_matWorld.Multiply(matRotateX, m_matWorld);
-	matRotateY.RotateYMatrix(y);
+	matRotateY.RotateYMatrix((float)y);
 	m_matWorld.Multiply(matRotateY, m_matWorld);
-	matRotateZ.RotateZMatrix(z);
+	matRotateZ.RotateZMatrix((float)z);
 	m_matWorld.Multiply(matRotateZ, m_matWorld);        // matWorld = rotZ * rotY * rotX * origMatWorld
 }
 
